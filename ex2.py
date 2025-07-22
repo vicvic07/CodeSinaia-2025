@@ -1,10 +1,5 @@
 import csv
-vec=[]
-with open ('IntroToPy/mountains_db.tsv', newline ='', encoding='UTF-8-sig') as durdur:
-    rows=csv.reader (durdur, delimiter='\t')
-    for row in rows:
-        if row:
-            print (row)
+import pandas as pd
 
-for chestie in vec:
-    print (chestie[0])
+df=pd.read_csv ('IntroToPy/mountains_db.tsv', delimiter='\t')
+print (df.to_string ())
