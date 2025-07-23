@@ -4,24 +4,34 @@ from roman_converter import roman_convertor
 class TestInvalidInput(unittest.TestCase):
     # ======== Step 1 ======== no input, return None
     def test_no_input(self):
-        self.assertEqual(roman_convertor(None), None)
-    def test_string (self):
-        self.assertEqual(roman_convertor('Imi place schaorma'), None)
-    def test_decimal (self):
-        self.assertEqual(roman_convertor(3.14), None)
-    def test_range(self):
-        self.assertEqual(roman_convertor (0), None)
-    def test_range2(self):
-        self.assertEqual(roman_convertor(4000), None)
-    def test_1_5 (self):
-        for i in range (1, 5):
-            out=''
-            num=i
-            while (num):
-                num=num-1
-                out+='I'
-            self.assertEqual (roman_convertor (i), out)
-    def test_5 (self):
-        self.assertEqual (roman_convertor (5), 'V')
-    def test_50 (self):
-        self.assertEqual (roman_convertor (50), 'L')
+        self.assertEqual(roman_converter(None), None)
+
+    def test_str(self):
+        self.assertEqual(roman_converter('schaorma'), None)
+
+    def test_dec(self):
+        self.assertEqual(roman_converter(3.14), None)
+
+    def test_min(self):
+        self.assertEqual(roman_converter(0), None)
+
+    def test_max(self):
+        self.assertEqual(roman_converter(4000), None)
+
+    def test_one(self):
+        self.assertEqual(roman_converter(1), 'I')
+
+    def test_two(self):
+        self.assertEqual(roman_converter(2), 'II')
+
+    def test_four(self):
+        self.assertEqual(roman_converter(4), 'IIII')
+
+    def test_five(self):
+        self.assertEqual(roman_converter(5), 'V')
+    
+    def test_six(self):
+        self.assertEqual(roman_converter(6), 'VI')
+    
+    def test_ten(self):
+        self.assertEqual(roman_converter(10), 'X')
