@@ -7,20 +7,20 @@ def send_message(entry, chat_log):
         empty_message_alert()
         return
 
-    user_message = None
-    
+    user_message = entry.get()
     #TODO: get entry's text in the user_message variable using the get method4
     
     
     #TODO: if user_message is blank, empty_message_alert
-    
+    if not len(user_message.strip().split()):
+        empty_message_alert ()
 
     chat_log.config(state=tk.NORMAL)
     chat_log.insert(tk.END, f"You: {user_message.strip()}\n")
     
     bot_response = None
     #TODO: get response for the user message as the bot_response using the get_response function from chatbot.probability
-    
+    bot_response=get_response (user_message)
     
     chat_log.insert(tk.END, f"Bot: {bot_response}\n\n")
     
